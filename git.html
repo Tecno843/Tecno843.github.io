@@ -1,4 +1,6 @@
- <!DOCTYPE html><html lang="es">
+
+<!DOCTYPE html>
+<html lang="es">
 <head>
 <meta charset="UTF-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1.0" />
@@ -29,13 +31,17 @@ h1 {
   50% { text-shadow: 0 0 30px #00f0ff; }
   100% { text-shadow: 0 0 10px #00f0ff; }
 }
+.container {
+  max-width: 800px;
+  margin: auto;
+  padding: 20px;
+}
 form {
-  max-width: 500px;
-  margin: 40px auto;
   background: rgba(0, 0, 0, 0.6);
   padding: 20px;
   border-radius: 12px;
   box-shadow: 0 0 20px #00f0ff;
+  margin-top: 20px;
 }
 input, textarea {
   width: 100%;
@@ -87,22 +93,65 @@ footer {
   0% { transform: translateY(0); opacity: 0.6; }
   100% { transform: translateY(100vh); opacity: 0; }
 }
+.whatsapp {
+  display: block;
+  width: fit-content;
+  margin: 20px auto;
+  background: #25D366;
+  color: white;
+  padding: 12px 24px;
+  font-size: 1.2em;
+  text-decoration: none;
+  border-radius: 50px;
+  box-shadow: 0 0 10px #25D366;
+  transition: all 0.3s ease-in-out;
+}
+.whatsapp:hover {
+  transform: scale(1.1);
+  box-shadow: 0 0 20px #25D366;
+}
+ul {
+  list-style: none;
+  padding-left: 0;
+  font-size: 1.1em;
+}
+ul li::before {
+  content: "⚡ ";
+  color: #00f0ff;
+}
 </style>
 </head>
 <body>
-<h1>⚡ Electricista José Eliseo ⚡</h1>
-<p style="text-align:center; font-size: 1.2em;">Ciudad Juárez | Tel: +52 656 358 3190 | gtajoseeliseo@gmail.com</p><form action="https://formsubmit.co/angelalvarez44r@icloud.com" method="POST">
-  <input type="hidden" name="_cc" value="gtajoseeliseo@gmail.com">
-  <input type="hidden" name="_next" value="https://tusitio.com/gracias.html">
-  <input type="hidden" name="_autoresponse" value="¡Gracias por contactarnos! Te responderemos pronto.">  <input type="text" name="nombre" placeholder="Tu nombre" required>
-  <input type="email" name="email" placeholder="Tu correo" required>
-  <textarea name="mensaje" placeholder="Escribe tu mensaje" required></textarea>
-  <button type="submit">Enviar Mensaje</button>
-</form><footer>
-  &copy; 2025 Electricista José Eliseo González Silva. Todos los derechos reservados.
-</footer><script>
+<div class="container">
+  <h1>⚡ Electricista José Eliseo ⚡</h1>
+  <p style="text-align:center; font-size: 1.2em;">Ciudad Juárez | Tel: +52 656 358 3190 | gtajoseeliseo@gmail.com</p>
+
+  <a href="https://wa.me/526563583190" target="_blank" class="whatsapp">Contactar por WhatsApp</a>
+
+  <h2>Servicios ofrecidos:</h2>
+  <ul>
+    <li>Bajadas de luz</li>
+    <li>Cajas de breiks</li>
+    <li>Cableado de casas</li>
+    <li>Instalaciones de minisplits</li>
+    <li>Y muchas más cosas</li>
+  </ul>
+
+  <form action="https://formsubmit.co/angelalvarez44r@icloud.com" method="POST">
+    <input type="hidden" name="_cc" value="gtajoseeliseo@gmail.com">
+    <input type="hidden" name="_autoresponse" value="¡Gracias por contactarnos! Te responderemos pronto.">
+    <input type="text" name="nombre" placeholder="Tu nombre" required>
+    <input type="email" name="email" placeholder="Tu correo" required>
+    <textarea name="mensaje" placeholder="Escribe tu mensaje" required></textarea>
+    <button type="submit">Enviar Mensaje</button>
+  </form>
+
+  <footer>
+    &copy; 2025 Electricista José Eliseo González Silva. Todos los derechos reservados.
+  </footer>
+</div>
+<script>
   document.querySelector("form").addEventListener("submit", function(e) {
-    // Evitar envío inmediato para animaciones
     e.preventDefault();
     confetti();
     setTimeout(() => e.target.submit(), 1800);
@@ -117,5 +166,6 @@ footer {
       setTimeout(() => rayo.remove(), 2000);
     }
   }
-</script></body>
+</script>
+</body>
 </html>
